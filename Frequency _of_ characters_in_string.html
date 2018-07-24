@@ -3,6 +3,9 @@
 
 <body>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
     <style>
@@ -11,7 +14,7 @@
         }
     </style>
 
-    <form class="pure-form pure-form-aligned">
+    <form class="pure-form pure-form-aligned" name="stringEnt">
         <fieldset>
             <div class="pure-control-group">
                 <label for="name">Enter a String</label>
@@ -23,30 +26,53 @@
             </div>
         </fieldset>
 
-        <div id="output">
+        <div id="output" class="pure-control-group">
 
         </div>
     </form>
 
     <script>
-
         function countCharac() {
+
+            $("form[name='stringEnt']").validate({
+                // Specify validation rules
+                rules: {
+                    name: {
+                        required: true,
+                        maxlength: 30
+                    },
+                },
+                // Specify validation error messages
+                messages: {
+                    name: "Please enter the string",
+                },
+            });
+
+
+            if ($("form[name='stringEnt']").valid() == false) { //check if form validate
+                return false;
+            }
 
             var charString;
             charString = document.getElementById("name").value;
-           
-            var res = getFrequency(charString);
-            var obj = JSON.parse(res);
-            console.log(obj);
-            // document.getElementById("output").innerHTML = res;
-            
-        }
 
+            var res = getFrequency(charString);
+            console.log(res);
+            // var obj = JSON.parse(res);
+            // console.log(obj);
+            // document.getElementById("output").innerHTML = JSON.stringify(res);
+            for (x in res) {
+                document.getElementById("output").innerHTML += x +":"+res[x] + "<br>";
+            }
+
+        }
+        
+        //for counting the inputted character in string
         function count(string, char) {
             var re = new RegExp(char, "gi");
             return string.match(re).length;
         }
-
+        //for counting all the characters present in the string
         function getFrequency(string) {
             var freq = [];
             var sentence = " Time appears";
@@ -54,15 +80,13 @@
                 var character = string.charAt(i);
                 if (freq[character]) {
                     freq[character]++;
-                    freq[sentence];
                 } else {
                     freq[character] = 1;
-                    freq[sentence];
                 }
             }
-           
+
             // var obj = JSON.parse(freq);
-           console.log(freq);
+            // console.log(freq);
             return freq;
         };
 
