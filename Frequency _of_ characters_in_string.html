@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <style>
+        .btn-mid {
+            margin-left: 215px !important;
+        }
+    </style>
+
+    <form class="pure-form pure-form-aligned">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="name">Enter a String</label>
+                <input id="name" type="text" placeholder="Enter a String">
+                <!-- <span class="pure-form-message-inline">This is a required field.</span> -->
+            </div>
+
+            <button type="button" class="pure-button pure-button-primary btn-mid" onclick="countCharac()">Submit</button>
+            </div>
+        </fieldset>
+
+        <div id="output">
+
+        </div>
+    </form>
+
+    <script>
+
+        function countCharac() {
+
+            var charString;
+            charString = document.getElementById("name").value;
+           
+            var res = getFrequency(charString);
+            var obj = JSON.parse(res);
+            console.log(obj);
+            // document.getElementById("output").innerHTML = res;
+            
+        }
+
+        function count(string, char) {
+            var re = new RegExp(char, "gi");
+            return string.match(re).length;
+        }
+
+        function getFrequency(string) {
+            var freq = [];
+            var sentence = " Time appears";
+            for (var i = 0; i < string.length; i++) {
+                var character = string.charAt(i);
+                if (freq[character]) {
+                    freq[character]++;
+                    freq[sentence];
+                } else {
+                    freq[character] = 1;
+                    freq[sentence];
+                }
+            }
+           
+            // var obj = JSON.parse(freq);
+           console.log(freq);
+            return freq;
+        };
+
+
+    </script>
+
+</body>
+
+</html>
