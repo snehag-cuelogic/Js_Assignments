@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
     <style>
         .btn-mid {
@@ -12,12 +13,12 @@
     <form class="pure-form pure-form-aligned" name="stringEnt">
         <fieldset>
             <div class="pure-control-group numberDiv" id="numberDiv">
-                <label for="name">Enter a Number</label>
-                <input id="name" type="text" placeholder="Enter a number">
-                <button class="pure-button pure-button-success" type="button" onclick="addMore()">Add More</button>
+                <label for="name">Enter a Numbers</label>
+                <input id="numbers" type="text" placeholder="Enter numbers">
+                <span class="pure-form-message-inline">Enter numbers comma separated</span>
             </div>
 
-            <button type="button" class="pure-button pure-button-primary btn-mid" onclick="countCharac()">Submit</button>
+            <button type="button" class="pure-button pure-button-primary btn-mid" onclick="secondLarge()">Submit</button>
             </div>
         </fieldset>
 
@@ -27,17 +28,30 @@
     </form>
 
     <script>
-    function addMore(){
-        var btn = document.createElement("input",'br');
-        var t = document.createTextNode("Enter a number");
-        // btn.appendChild(t);
-        // document.body.appendChild(btn);
+        function secondLarge() {
+            var numbers = document.getElementById('numbers').value;
+            console.log(numbers);
 
-        var foo = document.getElementById("numberDiv");
+            var temp = new Array();
+            // converting the string into array
+            temp = numbers.split(",");
+            //convert array without quotation
+            var arrayOfNumbers = temp.map(Number);
+            var res = removeLargest(arrayOfNumbers);
 
-        //Append the element in page (in span).
-        foo.appendChild(btn);
-    }
+            //function removing largest number
+            function removeLargest(temp) {
+                var min = Math.max.apply(null, temp);
+                temp.forEach((v, k, arr) => v !== min || arr.splice(k, 1));
+                return temp;
+            }
+
+            //find out 2nd largest
+            var secondLarge= Math.max.apply(null, res);
+            document.getElementById("output").innerHTML += "The second largest number is = "+ secondLarge;
+
+        }
     </script>
 </body>
+
 </html>
