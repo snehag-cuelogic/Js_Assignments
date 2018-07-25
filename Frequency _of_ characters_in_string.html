@@ -2,10 +2,6 @@
 <html>
 
 <body>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
     <style>
@@ -33,40 +29,28 @@
 
     <script>
         function countCharac() {
-
-            $("form[name='stringEnt']").validate({
-                // Specify validation rules
-                rules: {
-                    name: {
-                        required: true,
-                        maxlength: 30
-                    },
-                },
-                // Specify validation error messages
-                messages: {
-                    name: "Please enter the string",
-                },
-            });
-
-
-            if ($("form[name='stringEnt']").valid() == false) { //check if form validate
-                return false;
+            var name = document.forms["stringEnt"]["name"];
+            
+            function formValidation() {
+            if (name.value == "") {
+                    window.alert("Please enter string!");
+                    name.focus();
+                    return false;
+                }
             }
+            formValidation();
 
             var charString;
             charString = document.getElementById("name").value;
 
             var res = getFrequency(charString);
             console.log(res);
-            // var obj = JSON.parse(res);
-            // console.log(obj);
-            // document.getElementById("output").innerHTML = JSON.stringify(res);
             for (x in res) {
-                document.getElementById("output").innerHTML += x +":"+res[x] + "<br>";
+                document.getElementById("output").innerHTML += x + ":" + res[x] + "<br>";
             }
 
         }
-        
+
         //for counting the inputted character in string
         function count(string, char) {
             var re = new RegExp(char, "gi");

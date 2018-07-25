@@ -1,266 +1,276 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-       
- <!-- inserting style  start  -->
- <style type="text/css">
-    .form-style-5{
-        max-width: 500px;
-        padding: 10px 20px;
-        background: #f4f7f8;
-        margin: 10px auto;
-        padding: 20px;
-        background: #f4f7f8;
-        border-radius: 8px;
-        font-family: Georgia, "Times New Roman", Times, serif;
-    }
-    .form-style-5 fieldset{
-        border: none;
-    }
-    .form-style-5 legend {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-    }
-    .form-style-5 label {
-        display: block;
-        margin-bottom: 8px;
-    }
-    .form-style-5 input[type="text"],
-    .form-style-5 input[type="date"],
-    .form-style-5 input[type="datetime"],
-    .form-style-5 input[type="email"],
-    .form-style-5 input[type="number"],
-    .form-style-5 input[type="search"],
-    .form-style-5 input[type="time"],
-    .form-style-5 input[type="url"],
-    .form-style-5 textarea,
-    .form-style-5 select {
-        font-family: Georgia, "Times New Roman", Times, serif;
-        background: rgba(255,255,255,.1);
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        margin: 0;
-        outline: 0;
-        padding: 7px;
-        width: 100%;
-        box-sizing: border-box; 
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box; 
-        background-color: #e8eeef;
-        color:#8a97a0;
-        -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-        margin-bottom: 30px;
-        
-    }
-    .form-style-5 input[type="text"]:focus,
-    .form-style-5 input[type="date"]:focus,
-    .form-style-5 input[type="datetime"]:focus,
-    .form-style-5 input[type="email"]:focus,
-    .form-style-5 input[type="number"]:focus,
-    .form-style-5 input[type="search"]:focus,
-    .form-style-5 input[type="time"]:focus,
-    .form-style-5 input[type="url"]:focus,
-    .form-style-5 textarea:focus,
-    .form-style-5 select:focus{
-        background: #d2d9dd;
-    }
-    .form-style-5 select{
-        -webkit-appearance: menulist-button;
-        height:35px;
-    }
-    .form-style-5 .number {
-        background: #1abc9c;
-        color: #fff;
-        height: 30px;
-        width: 30px;
-        display: inline-block;
-        font-size: 0.8em;
-        margin-right: 4px;
-        line-height: 30px;
-        text-align: center;
-        text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-        border-radius: 15px 15px 15px 0px;
-    }
-    
-    .form-style-5 input[type="submit"],
-    .form-style-5 input[type="button"]
-    {
-        position: relative;
-        display: block;
-        padding: 19px 39px 18px 39px;
-        color: #FFF;
-        margin: 0 auto;
-        background: #1abc9c;
-        font-size: 18px;
-        text-align: center;
-        font-style: normal;
-        width: 100%;
-        border: 1px solid #16a085;
-        border-width: 1px 1px 3px;
-        margin-bottom: 10px;
-    }
-    .form-style-5 input[type="submit"]:hover,
-    .form-style-5 input[type="button"]:hover
-    {
-        background: #109177;
-    }
 
-    #userInfo {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+    <!-- inserting style  start  -->
+    <style type="text/css">
+        .form-style-5 {
+            max-width: 500px;
+            padding: 10px 20px;
+            background: #f4f7f8;
+            margin: 10px auto;
+            padding: 20px;
+            background: #f4f7f8;
+            border-radius: 8px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
 
-#userInfo td, #userInfo th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
+        .form-style-5 fieldset {
+            border: none;
+        }
 
-#userInfo tr:nth-child(even){background-color:#f2f2f2;}
+        .form-style-5 legend {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
 
-#userInfo tr:hover {background-color: #ddd;}
+        .form-style-5 label {
+            display: block;
+            margin-bottom: 8px;
+        }
 
-#userInfo th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #109177;
-    color: white;
-}
-.error{
-    color: red;
-}
+        .form-style-5 input[type="text"],
+        .form-style-5 input[type="date"],
+        .form-style-5 input[type="datetime"],
+        .form-style-5 input[type="email"],
+        .form-style-5 input[type="number"],
+        .form-style-5 input[type="search"],
+        .form-style-5 input[type="time"],
+        .form-style-5 input[type="url"],
+        .form-style-5 textarea,
+        .form-style-5 select {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            background: rgba(255, 255, 255, .1);
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 0;
+            outline: 0;
+            padding: 7px;
+            width: 100%;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            background-color: #e8eeef;
+            color: #8a97a0;
+            -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+            margin-bottom: 30px;
+
+        }
+
+        .form-style-5 input[type="text"]:focus,
+        .form-style-5 input[type="date"]:focus,
+        .form-style-5 input[type="datetime"]:focus,
+        .form-style-5 input[type="email"]:focus,
+        .form-style-5 input[type="number"]:focus,
+        .form-style-5 input[type="search"]:focus,
+        .form-style-5 input[type="time"]:focus,
+        .form-style-5 input[type="url"]:focus,
+        .form-style-5 textarea:focus,
+        .form-style-5 select:focus {
+            background: #d2d9dd;
+        }
+
+        .form-style-5 select {
+            -webkit-appearance: menulist-button;
+            height: 35px;
+        }
+
+        .form-style-5 .number {
+            background: #1abc9c;
+            color: #fff;
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            font-size: 0.8em;
+            margin-right: 4px;
+            line-height: 30px;
+            text-align: center;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-radius: 15px 15px 15px 0px;
+        }
+
+        .form-style-5 input[type="submit"],
+        .form-style-5 input[type="button"] {
+            position: relative;
+            display: block;
+            padding: 19px 39px 18px 39px;
+            color: #FFF;
+            margin: 0 auto;
+            background: #1abc9c;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            width: 100%;
+            border: 1px solid #16a085;
+            border-width: 1px 1px 3px;
+            margin-bottom: 10px;
+        }
+
+        .form-style-5 input[type="submit"]:hover,
+        .form-style-5 input[type="button"]:hover {
+            background: #109177;
+        }
+
+        #userInfo {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #userInfo td,
+        #userInfo th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #userInfo tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #userInfo tr:hover {
+            background-color: #ddd;
+        }
+
+        #userInfo th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #109177;
+            color: white;
+        }
+
+        .error {
+            color: red;
+        }
     </style>
 
     <!-- end of style -->
 
     <!-- form starts -->
-<div class="form-style-5">
+    <div class="form-style-5">
         <h1> Javascript Assignment</h1>
-    <form name="userInfo">
-    <fieldset>
-    <legend><span class="number">1</span> Candidate Info</legend>
-    <input type="text" name="name" placeholder="Your Name *" id="name" maxlength="30">
-    <input type="email" name="email" placeholder="Your Email *" id="email" maxlength="30">
-    <textarea name="desc" placeholder="About yourself" id="desc"></textarea>
-    <label for="job">Interests:</label>
-    <select id="job" name="Interests">
-    <optgroup label="Indoors">
-      <option value="fishkeeping">Fishkeeping</option>
-      <option value="reading">Reading</option>
-      <option value="boxing">Boxing</option>
-      <option value="debate">Debate</option>
-      <option value="gaming">Gaming</option>
-      <option value="snooker">Snooker</option>
-      <option value="other_indoor">Other</option>
-    </optgroup>
-    <optgroup label="Outdoors">
-      <option value="football">Football</option>
-      <option value="swimming">Swimming</option>
-      <option value="fishing">Fishing</option>
-      <option value="climbing">Climbing</option>
-      <option value="cycling">Cycling</option>
-      <option value="other_outdoor">Other</option>
-    </optgroup>
-    </select>      
-    </fieldset>
-    <!-- <fieldset>
+        <form name="userInfo">
+            <fieldset>
+                <legend>
+                    <span class="number">1</span> Candidate Info</legend>
+                <input type="text" name="name" placeholder="Your Name *" id="name" maxlength="30">
+                <input type="email" name="email" placeholder="Your Email *" id="email" maxlength="30">
+                <textarea name="desc" placeholder="About yourself" id="desc"></textarea>
+                <label for="job">Interests:</label>
+                <select id="job" name="Interests">
+                    <optgroup label="Indoors">
+                        <option value="fishkeeping">Fishkeeping</option>
+                        <option value="reading">Reading</option>
+                        <option value="boxing">Boxing</option>
+                        <option value="debate">Debate</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="snooker">Snooker</option>
+                        <option value="other_indoor">Other</option>
+                    </optgroup>
+                    <optgroup label="Outdoors">
+                        <option value="football">Football</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="fishing">Fishing</option>
+                        <option value="climbing">Climbing</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="other_outdoor">Other</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <!-- <fieldset>
     <legend><span class="number">2</span> Additional Info</legend>
     <textarea name="field3" placeholder="About Your School"></textarea>
     </fieldset> -->
-    <input type="submit" value="Save" onclick="addInfo()"/>
-    </form>
+            <input type="button" value="Save" onclick="addInfo()" />
+        </form>
     </div>
     <!-- form ends -->
     <!-- table starts -->
     <table id="userInfo">
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Job Interests</th>
-              <th>Description</th>
-            </tr>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job Interests</th>
+            <th>Description</th>
+        </tr>
     </table>
     <!-- table ends -->
 
 
-<script>
-function addInfo(){
-// form validation begins
-$("form[name='userInfo']").validate({
-    // Specify validation rules
-    rules: {
-      // The key name on the left side is the name attribute
-      // of an input field. Validation rules are defined
-      // on the right side
-      name: {
-          required:true,
-          maxlength:30
-        },
-      email: {
-        required: true,
-        // Specify that email should be validated
-        // by the built-in "email" rule
-        email: true
-      },
-      desc: {
-        // required: true,
-        // minlength: 5
-      }
-    },
-    // Specify validation error messages
-    messages: {
-      name: "Please enter your name",
-      
-      email: "Please enter a valid email address"
-    },
-   
-  });
-//   form validation ends
+    <script>
+        function addInfo() {
+           
+           
+             // form validation begins
+            function formValidation(){ // function for form validation
+             var email = document.forms["userInfo"]["email"];
+             var name = document.forms["userInfo"]["name"];
 
-if($("form[name='userInfo']").valid() == false){ //check if form validate
-return false;
-}
+            if (name.value == "") {
+                window.alert("Please enter your name!");
+                name.focus();
+                return false;
+            }
 
-var name;
-var email;
-var desc;
-var Interests;
-name = document.getElementById("name").value;
-email = document.getElementById("email").value;
-desc = document.getElementById("desc").value;
-Interests = document.getElementById("job").value;
-// console.log(name+" "+email+" "+" "+desc+" "+Interests);
 
-var table = document.getElementById("userInfo");
-var tr = document.createElement("tr");
-var td = document.createElement("td");
-var td1 = document.createElement("td");
-var td2 = document.createElement("td");
-var td3 = document.createElement("td");
-var txt = document.createTextNode(name);
-var txt1 = document.createTextNode(email);
-var txt2 = document.createTextNode(Interests);
-var txt3 = document.createTextNode(desc);
+            if (email.value == "") {
+                window.alert("Please enter a valid e-mail address!");
+                email.focus();
+                return false;
+            }
 
-td.appendChild(txt);
-td1.appendChild(txt1);
-td2.appendChild(txt2);
-td3.appendChild(txt3);
-tr.appendChild(td);
-tr.appendChild(td1);
-tr.appendChild(td2);
-tr.appendChild(td3);
-table.appendChild(tr);
-// $("form[name='userInfo']").find("input[type=text], textarea, email").val("");
-}
+            if (email.value.indexOf("@", 0) < 0) {
+                window.alert("Please enter a valid e-mail address!");
+                email.focus();
+                return false;
+            }
 
-</script>
+            if (email.value.indexOf(".", 0) < 0) {
+                window.alert("Please enter a valid e-mail address!");
+                email.focus();
+                return false;
+            }
+        }
+        formValidation();    
+            //   form validation ends
+           
+            var name;
+            var email;
+            var desc;
+            var Interests;
+            name = document.getElementById("name").value;
+            email = document.getElementById("email").value;
+            desc = document.getElementById("desc").value;
+            Interests = document.getElementById("job").value;
+            // console.log(name+" "+email+" "+" "+desc+" "+Interests);
+
+            var table = document.getElementById("userInfo");
+            var tr = document.createElement("tr");
+            var td = document.createElement("td");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var txt = document.createTextNode(name);
+            var txt1 = document.createTextNode(email);
+            var txt2 = document.createTextNode(Interests);
+            var txt3 = document.createTextNode(desc);
+
+            td.appendChild(txt);
+            td1.appendChild(txt1);
+            td2.appendChild(txt2);
+            td3.appendChild(txt3);
+            tr.appendChild(td);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            table.appendChild(tr);
+            // $("form[name='userInfo']").find("input[type=text], textarea, email").val("");
+        }
+
+    </script>
 </body>
+
 </html>
