@@ -1,0 +1,35 @@
+<html>
+
+<body>
+<h1>Creating nested objects</h1>
+<h2></h2>
+<p id="demo"></p>
+
+
+    <script>
+        var myObj, i, j, x = "";
+        myObj = {
+            "name": "Farah",
+            "age": 21,
+            "cars": [
+                { "name": "Ford", "models": ["Fiesta", "Focus", "Mustang"] },
+                { "name": "BMW", "models": ["320", "X3", "X5"] },
+                { "name": "Fiat", "models": ["500", "Panda"] }
+            ]
+        }
+        console.log(myObj);
+        x += "<h2>Name= " + myObj.name + "</h2> <br>";
+        x += "<h2>Age= " + myObj.age + "</h2> <br>";
+
+        for (i in myObj.cars) {
+            x += "<h2> Car = " + myObj.cars[i].name + "</h2>";
+            for (j in myObj.cars[i].models) {
+                x += myObj.cars[i].models[j] + "<br>";
+            }
+        }
+
+        document.getElementById("demo").innerHTML = x;
+    </script>
+</body>
+
+</html>
