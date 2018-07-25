@@ -217,7 +217,7 @@
 
 
             if (email.value == "") {
-                window.alert("Please enter a valid e-mail address!");
+                window.alert("Please enter e-mail address!");
                 email.focus();
                 return false;
             }
@@ -234,7 +234,11 @@
                 return false;
             }
         }
-        formValidation();    
+        var res = formValidation();  
+        if(res == false){
+            return false;
+        }
+        console.log(formValidation());  
             //   form validation ends
            
             var name;
