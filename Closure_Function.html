@@ -1,0 +1,54 @@
+<html>
+
+<body>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <style>
+        .btn-mid {
+            margin-left: 215px !important;
+        }
+    </style>
+    <h1>Closure function Example</h1>
+    <form class="pure-form pure-form-aligned" name="stringEnt">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="fname">Enter First Name</label>
+                <input id="fname" type="text" placeholder="Enter first name">
+            </div>
+            <div class="pure-control-group">
+                <label for="lname">Enter Last Name</label>
+                <input id="lname" type="text" placeholder="Enter last name">
+            </div>
+
+            <button type="button" class="pure-button pure-button-primary btn-mid" onclick="getFullName()">Submit</button>
+            </div>
+        </fieldset>
+
+        <div id="output" class="pure-control-group">
+
+        </div>
+    </form>
+    <script>
+
+        function getFullName() {
+
+            var nameIntro = "Your name is ";
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            // this inner function has access to the outer function's variables, including the parameter
+            function makeFullName() {
+                return nameIntro + fname + " " + lname;
+
+            }
+
+            // return makeFullName();
+            document.getElementById("output").innerHTML += makeFullName();
+
+        }
+
+
+    </script>
+</body>
+
+</html>
