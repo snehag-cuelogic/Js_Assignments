@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h1>Callback function for product and addition for two numbers 5 and 35</h1>
+        <script>
+        function someAction(x, y, someCallback) {
+    return someCallback(x, y);
+}
+
+function calcProduct(x, y) {
+    return x * y;
+}
+
+function calcSum(x, y) {
+    return x + y;
+}
+
+// function processUserInput(callback) { 
+//   var num1 = prompt('Please enter 1st number.');
+//   var num2 = prompt('Please enter 2nd number.');
+//   callback(num1,num2);
+// }
+
+// alerts 75, the product of 5 and 15
+alert(someAction(5, 35, calcProduct));
+// alerts 20, the sum of 5 and 15
+alert(someAction(5, 35, calcSum));
+        </script>
+    </body>
+</html>
