@@ -2,6 +2,15 @@ var obj;
 var allEntries;
 
 function loadprofile() {
+
+    username = localStorage.getItem('username');
+    if (username == 'null') {
+        window.alert('sorry session is expired!!');
+        window.history.forward();
+    }
+    document.getElementById("username").innerHTML = username;
+    document.getElementById("usernameHead").innerHTML = username;
+
     username = getUser();
 
     var allEntries = getArray();
@@ -12,7 +21,7 @@ function loadprofile() {
     document.getElementById("PR_LN").value = obj.Lname;
     document.getElementById("PR_GENDER").value = obj.gender;
     document.getElementById("PR_ADDRESS").value = obj.Address;
-    // document.getElementById("PR_IMAGE").value = obj.imgurl;
+    document.getElementById("PR_IMAGE").value = obj.imgurl;
 }
 
 function search(username, allEntries) {
@@ -56,7 +65,7 @@ function updateInfo() {
     obj.Lname = document.getElementById("PR_LN").value;
     obj.gender = document.getElementById("PR_GENDER").value;
     obj.Address = document.getElementById("PR_ADDRESS").value;
-    // obj.imgurl = document.getElementById("PR_IMAGE").value;
+    obj.imgurl = document.getElementById("PR_IMAGE").value;
     
     setArray(allEntries);
 

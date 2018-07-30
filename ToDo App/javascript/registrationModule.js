@@ -32,7 +32,7 @@ function getData() {
     var Address = document.getElementById("address").value;
     var imgurl;
     var img2;
-    // imgurl = document.getElementById("img").value;
+    imgurl = document.getElementById("img").value;
     if(imgurl != '' || imgurl != null){
        img2 = imgurl;
     }else imgurl= ''

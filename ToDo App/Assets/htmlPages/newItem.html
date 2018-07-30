@@ -1,6 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Item</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <!-- bootstrap 3.0.2 -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="../AdminLTE/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- font Awesome -->
+  <link href="../AdminLTE/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- Ionicons -->
+  <link href="../AdminLTE/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+  <!-- Morris chart -->
+  <link href="../AdminLTE/css/morris/morris.css" rel="stylesheet" type="text/css" />
+  <!-- jvectormap -->
+  <link href="../AdminLTE/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <!-- fullCalendar -->
+  <link href="../AdminLTE/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+  <!-- Daterange picker -->
+  <link href="../AdminLTE/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link href="../AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+  <!-- Theme style -->
+  <link href="../AdminLTE/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+  <script src="../../javascript/ToDoModule.js"> </script>
+      <script src="../../javascript/storageModule.js"></script>
+      <script src="../../javascript/registrationModule.js"></script>
+      <script src="../../javascript/ValidationModule.js"></script>
+  <script src="../../javascript/profileModule.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+      <![endif]-->
+</head>
+<body class="skin-black" onload="loadhomepage()">
+
+  <header class="header">
+    <a href="index.html" class="logo">
+      <!-- Add the class icon to your logo image or logo icon to add the margining -->
+      ToDoApp
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return logout();">
+              <i class="fa fa-sign-out "></i>
+
+            </a>
+
+          </li>
+
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick=" return window.location = './profile.html';">
+              <i class="glyphicon glyphicon-user"></i>
+              Welcome
+              <span id="usernameHead"> </span>
+            </a>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- <body class="skin-black wysihtml5-supported  pace-done"> -->
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="../AdminLTE/img/avatar3.png" class="img-circle" alt="User Image" />
+          </div>
+          <div class="pull-left info">
+            Hello,
+            <p id="username"> </p>
+
+            <a href="#">
+              <i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+       
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li class="">
+            <a href="#"  onclick=" return window.location = './homepage.html';">
+                <i class="fa fa-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="">
+                <a href="#" onclick=" return window.location = './profile.html';">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Profile</span>
+                </a>
+        </li>
+        <li class="active">
+            <a href="#" onclick=" return window.location = './newItem.html';">
+                <i class="fa fa-dashboard"></i>
+                <span>Add New ToDo</span>
+            </a>
+    </li>
+
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <aside class="right-side">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+           Add New ToDo
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-dashboard"></i> Home</a>
+          </li>
+          <li class="active">Add New ToDo</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <!-- <div class="col-md-4">
+              
+             </div> -->
+          <!-- profile div starts -->
+          <div class="col-md-10">
+            <!-- general form elements disabled -->
+            <div class="box box-warning">
+              
+              <!-- /.box-header -->
+              <div class="box-body">
+                <form role="form">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="todoTitle"  />
+                  </div>
+                  <div class="form-group">
+                    <label>Select Type &nbsp;</label>
+                    <input name="Category" type="radio" value="office" class="form-comtrol"> Office <input type="radio"  name="Category" value="home" class="form-comtrol"> Home <input type="radio"  name="Category" value="personal" class="form-comtrol"> Personal
+                  </div>
+                  <div class="form-group">
+                    <label>Due Date</label>
+                    <input type="date" class="form-control datepicker" id="Due_date">
+                  </div>
+                  <div class="form-group">
+                    <label>Do you want to set reminder?</label>
+                    <input id="reminder" class="form-control" type="checkbox" onchange="addreminder()">
+                    <div id="time" style="display:none"> <input type="date" name="" id="Rdate"> </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Visibility</label>
+                    <input type="radio" name="visibility" value="Public" class="form-control "> Public <input type="radio" class="form-control" name="visibility" value="Private"> Private
+                  </div>
+
+                </form>
+                <button id="submitbtn" onclick="saveitem()" class="btn btn-primary">Update</button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- profile div ends -->
+          <!-- <div class="col-md-4">
+
+             </div> -->
+
+      </section>
+      <!-- /.content -->
+    </aside>
+    <!-- /.right-side -->
+    </div>
+    <!-- ./wrapper -->
+
+
+    <!-- jQuery 2.0.2 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../AdminLTE/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- AdminLTE App -->
+    <script src="../AdminLTE/js/AdminLTE/app.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +241,7 @@
        
       </div>
     </header>
-    <main>
+   <main>
       <div class="container">
             <p id="username" style="display:none"></p>
           <div id="newItemForm">
@@ -43,4 +259,4 @@
     </div>
   </body>
 
-</html>
+</html> -->
