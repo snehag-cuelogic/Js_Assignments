@@ -16,12 +16,14 @@ function loadprofile() {
     var allEntries = getArray();
     var x = search(username, allEntries);
     obj = allEntries[x];
+    console.log(obj);
     document.getElementById("PR_EMAIL").value = obj.Email;
     document.getElementById("PR_FN").value = obj.Fname;
     document.getElementById("PR_LN").value = obj.Lname;
     document.getElementById("PR_GENDER").value = obj.gender;
     document.getElementById("PR_ADDRESS").value = obj.Address;
     document.getElementById("PR_IMAGE").value = obj.imgurl;
+
 }
 
 function search(username, allEntries) {
