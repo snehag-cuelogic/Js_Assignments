@@ -6,7 +6,7 @@ function loadHomePage() {
     }
     document.getElementById("username").innerHTML = username;
     document.getElementById("usernameHead").innerHTML = username;
-    loadlist();
+    loadList();
 }
 
 function addItem() {
@@ -32,7 +32,7 @@ function loadList() {
             "<td>" + arr.reminder + "</td>" +
             "<td>" + arr.reminderdate + "</td>" +
             "<td>" + arr.visibility + "</td>" +
-            "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+            "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
     }
     if (todolist.length == 0) {
         var oldrow = document.getElementById("customers"); //parent
@@ -53,7 +53,7 @@ function saveItem() {
     var reminder = document.getElementById("reminder").checked;
     var reminderdate = document.getElementById("Rdate").value;
     var visibility = document.querySelector('input[name = "visibility"]:checked').value;
-    var item = new getitem(title, duedate, category, reminder, reminderdate, visibility);
+    var item = new getItem(title, duedate, category, reminder, reminderdate, visibility);
     username = getUser();
     var allEntries = getArray();
     var x = search(username, allEntries);
@@ -200,7 +200,7 @@ function searchByDateR() {
                 "<td>" + arr.reminder + "</td>" +
                 "<td>" + arr.reminderdate + "</td>" +
                 "<td>" + arr.visibility + "</td>" +
-                "<td>" + "<button id='changestatus" + i + "' class='statusbtn' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+                "<td>" + "<button id='changestatus" + i + "' class='statusbtn' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
         }
     }
 
@@ -231,7 +231,7 @@ function searchByDoneStatus() {
                     "<td>" + arr.reminder + "</td>" +
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
-                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
 
             }
         }
@@ -257,7 +257,7 @@ function searchByDoneStatus() {
                     "<td>" + arr.reminder + "</td>" +
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
-                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-warning' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-warning' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
             }
         }
     }
@@ -295,7 +295,7 @@ function searchByCat() {
                     "<td>" + arr.reminder + "</td>" +
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
-                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
             }
         }
     }
@@ -320,7 +320,7 @@ function searchByCat() {
                     "<td>" + arr.reminder + "</td>" +
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
-                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
             }
         }
     }
@@ -345,7 +345,7 @@ function searchByCat() {
                     "<td>" + arr.reminder + "</td>" +
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
-                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
+                    "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getStatusOp(i) + arr.status + "</button>" + "</td>";
             }
         }
     }
