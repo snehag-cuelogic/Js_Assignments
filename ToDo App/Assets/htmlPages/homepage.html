@@ -40,13 +40,7 @@
 </head>
 
 <body class="skin-black" onload="loadhomepage()">
-    <!-- <header>
-      <div class="container">
-        <img id="logo" src="../images/image_1207_todo_01.png" alt="">
-        <button id="viewpro" onclick="logout();"> Logout</button> 
-        <button id="viewpro" onclick="  window.location = './profile.html';">  <i class="material-icons">face</i>Profile </button> 
-      </div>
-    </header> -->
+
     <header class="header">
         <a href="index.html" class="logo">
             <!-- Add the class icon to your logo image or logo icon to add the margining -->
@@ -65,13 +59,10 @@
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return logout();">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="return logOut();">
                             <i class="fa fa-sign-out "></i>
-
                         </a>
-
                     </li>
-
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick=" return window.location = './profile.html';">
@@ -105,18 +96,6 @@
                             <i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
-                <!-- search form -->
-                <!-- <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search..." />
-                        <span class="input-group-btn">
-                            <button type='submit' name='seach' id='search-btn' class="btn btn-flat">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form> -->
-                <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="active">
@@ -126,18 +105,17 @@
                         </a>
                     </li>
                     <li class="">
-                            <a href="#" onclick=" return window.location = './profile.html';">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Profile</span>
-                            </a>
+                        <a href="#" onclick=" return window.location = './profile.html';">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Profile</span>
+                        </a>
                     </li>
                     <li class="">
                         <a href="#" onclick=" return window.location = './newItem.html';">
                             <i class="fa fa-dashboard"></i>
                             <span>Add New ToDo</span>
                         </a>
-                </li>
-
+                    </li>
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -178,7 +156,7 @@
                         </div>
 
                         <div class="col-md-2">
-                            <select name="searchtype" id="searchtype" onchange="acceptip()" style="display: none;" class="form-control">
+                            <select name="searchtype" id="searchtype" onchange="acceptIp()" style="display: none;" class="form-control">
                                 <option value="none" selected="selected">--Select--</option>
                                 <option value="DateR">Date Range</option>
                                 <option value="Cat">Categories</option>
@@ -190,10 +168,10 @@
                             From
                             <input type=date id='startDate'>To
                             <input type=date id='endDate'>
-                            <button id="searchbydateR" onclick="searchbydateR();">Search</button>
-                            <button id="refresh" onclick="loadhomepage();">Clear</button>
+                            <button id="searchbydateR" onclick="searchByDateR();">Search</button>
+                            <button id="refresh" onclick="loadHomePage();">Clear</button>
                         </div>
-                        <div id="searchCat" style="display: none;" class="col-md-2"> 
+                        <div id="searchCat" style="display: none;" class="col-md-2">
                             <select name='catlist' id='catlist'>
                                 <option value="none" selected="selected">--Select--</option>
                                 <option value='office'> Office </option>
@@ -201,8 +179,8 @@
                                 <option value='Personal'> Personal </option>
 
                             </select>
-                            <button id="searchbyCat" onclick="searchbyCat();"> Search</button>
-                            <button id="refresh" onclick="loadhomepage();">Clear</button>
+                            <button id="searchbyCat" onclick="searchByCat();"> Search</button>
+                            <button id="refresh" onclick="loadHomePage();">Clear</button>
                         </div>
 
                         <div id="searchIsdone" style="display: none;">
@@ -212,14 +190,14 @@
                                 <option value='itsdoing'> Pending </option>
                             </select>
                             <button id="searchbyCat" onclick="searchByDoneStatus();">Search</button>
-                            <button id="refresh" onclick="loadhomepage();">Clear</button>
+                            <button id="refresh" onclick="loadHomePage();">Clear</button>
                         </div>
 
                     </div>
                     <div class="box-header">
-                            <h3 class="box-title">To Do List</h3>
-                             
-                        </div>
+                        <h3 class="box-title">To Do List</h3>
+
+                    </div>
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover" id="customers">
                             <tr id="todo_header">
@@ -246,8 +224,6 @@
     <script src="../AdminLTE/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="../AdminLTE/js/AdminLTE/app.js" type="text/javascript"></script>
-
-
     </div>
 </body>
 

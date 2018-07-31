@@ -3,31 +3,29 @@ var obj;
 function login(event) {
 
     event.preventDefault();
-     var email = document.getElementById("emailAddr");
-     if(validateemail(email))
-       {
+    var email = document.getElementById("emailAddr");
+    if (validateemail(email)) {
 
- 
-    var emailaddr = document.getElementById("emailAddr").value;
-    var pwd = document.getElementById("password").value;
-    var allEntries = getArray();
-    var x = search(emailaddr, pwd, allEntries);
-    if (x != null) {
-        window.alert("You have successfully Logged In!");
-        setUser(emailaddr);
-        window.location = './homepage.html';
 
-    } else
-    {   
-        document.getElementById('loginerror').style.display="block";
-        document.getElementById('loginerror').innerHTML="invalid Credentials";
-        return false;
+        var emailaddr = document.getElementById("emailAddr").value;
+        var pwd = document.getElementById("password").value;
+        var allEntries = getArray();
+        var x = search(emailaddr, pwd, allEntries);
+        if (x != null) {
+            window.alert("You have successfully Logged In!");
+            setUser(emailaddr);
+            window.location = './homepage.html';
+
+        } else {
+            document.getElementById('loginerror').style.display = "block";
+            document.getElementById('loginerror').innerHTML = "invalid Credentials";
+            return false;
         }
 
-       }
-       return false;
+    }
+    return false;
 
-   
+
 }
 
 function search(username, pwd, allEntries) {

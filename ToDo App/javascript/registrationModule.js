@@ -1,5 +1,5 @@
 function registerUser(event) {
-   // event.preventDefault();
+    // event.preventDefault();
     if (validate()) {
         var newdata = getData();
         window.alert("You have registered successfully");
@@ -10,7 +10,7 @@ function registerUser(event) {
         window.location = "./Assets/htmlPages/homepage.html";
         return true;
     } else {
-       
+
         return false;
     }
 }
@@ -20,18 +20,18 @@ function getBase64(file) {
     var reader = new FileReader();
     var path;
     reader.readAsDataURL(file);
-   
+
     reader.onload = function () {
-     path= reader.result;
-     getImg(path);
-   };
+        path = reader.result;
+        getImg(path);
+    };
     reader.onerror = function (error) {
-      console.log('Error: ', error);
+        console.log('Error: ', error);
     };
     return path;
 
- }
-function getImg(path){
+}
+function getImg(path) {
     return path;
 }
 
@@ -53,10 +53,10 @@ function getData() {
     var Address = document.getElementById("address").value;
     var imgurl;
     imgurl = document.getElementById("img").files[0];
-    if(imgurl != '' || imgurl != null){
+    if (imgurl != '' || imgurl != null) {
         imgurl = getBase64(imgurl);
-    }else imgurl= '';
-   
+    } else imgurl = '';
+
     var pwd = document.getElementById("password").value;
     var strGender = document.getElementById("gender");
     var gender = strGender.options[strGender.selectedIndex].value;

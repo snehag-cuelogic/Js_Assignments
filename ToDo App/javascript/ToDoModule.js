@@ -1,4 +1,4 @@
-function loadhomepage() {
+function loadHomePage() {
     username = localStorage.getItem('username');
     if (username == 'null') {
         window.alert('sorry session is expired!!');
@@ -9,11 +9,11 @@ function loadhomepage() {
     loadlist();
 }
 
-function additem() {
+function addItem() {
     window.location = "./newItem.html";
 }
 
-function loadlist() {
+function loadList() {
     var allEntries = getArray();
     var x = search(username, allEntries);
     var todolist = allEntries[x].todo;
@@ -46,7 +46,7 @@ function loadlist() {
     }
 }
 
-function saveitem() {
+function saveItem() {
     var title = document.getElementById("todoTitle").value;
     var duedate = document.getElementById("Due_date").value;
     var category = document.querySelector('input[name = "Category"]:checked').value;
@@ -64,7 +64,7 @@ function saveitem() {
     window.location = "./homepage.html";
 }
 
-function getitem(title, duedate, category, reminder, reminderdate, visibility, item) {
+function getItem(title, duedate, category, reminder, reminderdate, visibility, item) {
     this.title = title;
     this.duedate = duedate;
     this.category = category;
@@ -81,11 +81,11 @@ function search(username, allEntries) {
     }
 }
 
-function addreminder() {
+function addReminder() {
     document.getElementById("time").style.display = "block";
 }
 
-function Deleteitems() {
+function DeleteItems() {
 
     username = getUser();
     var allEntries = getArray();
@@ -119,7 +119,7 @@ function Deleteitems() {
 }
 
 
-function changestatus(i) {
+function changeStatus(i) {
 
     username = getUser();
     var allEntries = getArray();
@@ -131,7 +131,7 @@ function changestatus(i) {
     setArray(allEntries);
 }
 
-function getstatusop(i) {
+function getStatusOp(i) {
 
     var allEntries = getArray();
     var x = search(username, allEntries);
@@ -146,10 +146,10 @@ function getstatusop(i) {
 
 
 }
-function addsearchlist() {
+function addSearchList() {
     document.getElementById('searchtype').style.display = "inline";
 }
-function acceptip() {
+function acceptIp() {
 
     if (document.getElementById('searchtype').value == 'DateR') {
         document.getElementById('searchbydaterange').style.display = "block";
@@ -170,7 +170,7 @@ function acceptip() {
 
 }
 
-function searchbydateR() {
+function searchByDateR() {
 
     var startDate = document.getElementById('startDate').value;
     var EndDate = document.getElementById('endDate').value;
@@ -258,15 +258,11 @@ function searchByDoneStatus() {
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
                     "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-warning' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
-
-
             }
         }
     }
-
-
 }
-function logout() {
+function logOut() {
     setUser(null);
     window.location = '../../Index.html';
 }
@@ -276,11 +272,9 @@ function clearAllRows() {
         oldrow.removeChild(oldrow.childNodes[i]);
 }
 
-function searchbyCat() {
+function searchByCat() {
     var selectedstatus = document.getElementById('catlist').value;
-
     clearAllRows();
-
     if (selectedstatus == 'office') {
         var allEntries = getArray();
         var x = search(username, allEntries);
@@ -302,8 +296,6 @@ function searchbyCat() {
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
                     "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
-
-
             }
         }
     }
@@ -329,8 +321,6 @@ function searchbyCat() {
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
                     "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
-
-
             }
         }
     }
@@ -356,14 +346,7 @@ function searchbyCat() {
                     "<td>" + arr.reminderdate + "</td>" +
                     "<td>" + arr.visibility + "</td>" +
                     "<td>" + "<button id='changestatus" + i + "' class='statusbtn btn btn-success' onclick='changestatus(" + i + ")'    >" + getstatusop(i) + arr.status + "</button>" + "</td>";
-
-
             }
         }
     }
-
-
-
-
-
 }
