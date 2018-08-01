@@ -85,7 +85,7 @@ function addReminder() {
     document.getElementById("time").style.display = "block";
 }
 
-function DeleteItems() {
+function deleteItems() {
 
     username = getUser();
     var allEntries = getArray();

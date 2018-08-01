@@ -1,4 +1,4 @@
-function validateemail(email) {
+function validateEmail(email) {
 
     if(email.length=='')
     {
@@ -29,20 +29,20 @@ function validate() {
     var lname = document.getElementById("lname");
     var gendervalue=document.getElementById("gender");
 
-    if (validateemail(email) && validatefname(fname)&& validategender(gendervalue) && validatelname(lname) && validatepassword()) {
+    if (validateEmail(email) && validateFname(fname)&& validateGender(gendervalue) && validateLname(lname) && validatePassword()) {
 
         return true;
     } else {
-                validateemail(email);
-                validatefname(fname);
-                validatelname(lname);
-                validategender(gendervalue);
-                validatepassword();
+                validateEmail(email);
+                validateFname(fname);
+                validateLname(lname);
+                validateGender(gendervalue);
+                validatePassword();
         return false;
     }
 }
 
-function validatefname(name) {
+function validateFname(name) {
 
     if(name.value.length==0){
          document.getElementById('fnameerror').style.display='block';
@@ -68,7 +68,7 @@ function validatefname(name) {
     }
 }
 
-function validatelname(name) {
+function validateLname(name) {
      if(name.value.length==0){
          document.getElementById('lnameerror').style.display='block';
          document.getElementById('lnameerror').innerHTML = "Please enter last name!";
@@ -94,7 +94,7 @@ function validatelname(name) {
 
     
 }
-function validategender(gendervalue) {
+function validateGender(gendervalue) {
   
     if(gendervalue.value=='none')
     {       
@@ -108,7 +108,7 @@ function validategender(gendervalue) {
     return true;
 }
 
-function validatepassword() {
+function validatePassword() {
 
     var pwd1 = document.getElementById("password").value;
     var pwd2 = document.getElementById("cpassword").value;
